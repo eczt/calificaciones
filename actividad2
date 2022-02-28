@@ -1,0 +1,57 @@
+
+public class Calificaciones {
+	
+	static String alumno = "Catalina";
+	static double[] calificaciones = {100, 99.50, 90, 87.70, 93};
+	static double promedio = calculaPromedio(calificaciones);
+	
+	//suma todas las calificaciones y las divide por la cantidad de calificaciones
+	public static double calculaPromedio(double [] calificaciones) {
+		double total = 0;
+		for (int i=0; i < calificaciones.length; i++) {
+			total = total += calificaciones[i];
+		}
+		double promedio = total / calificaciones.length;
+		return promedio;
+	}
+	
+	//calcula la nota final según el promedio
+	public static char calculaLetra(double promedio) {
+		if(promedio >= 91) {
+			return('A');
+		} else if (promedio >= 81) {
+			return('B');
+		} else if (promedio >= 71) {
+			return('C');
+		} else if (promedio >= 61) {
+			return('D');
+		} else if (promedio >= 51) {
+			return('E');
+		} else {
+			return('F');
+		}
+	}
+	
+	//despliega el nombre del estudiante, sus calificaciones, su promedio, y su nota final
+	public static void desplegarInformacion(String alumno, double [] calificaciones, double promedio) {
+		System.out.println("Nombre del estudiante: " + alumno + '\n');
+		System.out.println(
+				  "Calificación 1: " + calificaciones[0] + '\n'
+				+ "Calificación 2: " + calificaciones[1] + '\n'
+				+ "Calificacion 3: " + calificaciones[2] + '\n'
+				+ "Calificación 4: " + calificaciones[3] + '\n'
+				+ "Calificacion 5: " + calificaciones[4] + '\n'
+		);
+		System.out.println("Promedio: " + calculaPromedio(calificaciones));
+		System.out.println("Calificación: " + calculaLetra(promedio));
+	}
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Calificaciones.desplegarInformacion(alumno, calificaciones, promedio);
+		
+		
+	}
+
+}
